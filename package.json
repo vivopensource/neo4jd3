@@ -1,6 +1,6 @@
 {
   "name": "ng-neo4jd3",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Neo4j Visualisation using D3.js",
   "author": " <viveksacademia@gmail.com>",
   "engines": {
@@ -34,8 +34,11 @@
     "tslib": "^1.9.0"
   },
   "files": [
-    "lib/assets/img/*",
-    "lib/assets/css/*",
-    "lib/assets/scss/*"
+    "bundles/*",
+    "esm5/*",
+    "esm2015/*",
+    "fesm5/*",
+    "fesm2015/*",
+    "lib/*"
   ]
 }
