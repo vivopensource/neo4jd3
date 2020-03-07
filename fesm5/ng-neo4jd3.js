@@ -1131,7 +1131,8 @@ var NgNeo4jd3Service = /** @class */ (function () {
         var thisObj = this;
         // TODO >> Change This To Become The Container
         // Added the [iconFlag] attribute in the node or 'd' variable
-        return node.append('image').attr('width', '35px').attr('height', '35px').attr('x', '-18px').attr('y', '-18px')
+        return node.append('image').attr('width', '35px')
+            .attr('height', '35px').attr('x', '-18px').attr('y', '-18px')
             .attr('xlink:href', (/**
          * @param {?} d
          * @return {?}
@@ -2504,7 +2505,8 @@ var NgNeo4jd3Component = /** @class */ (function () {
     NgNeo4jd3Component.decorators = [
         { type: Component, args: [{
                     selector: 'lib-ng-neo4jd3',
-                    template: "\n    <p>\n      ng-neo4jd3 works!\n    </p>\n  "
+                    template: "\n    <p>\n      ng-neo4jd3 works!\n    </p>\n  ",
+                    styles: ['./../assets/css/counter-button.component.css']
                 }] }
     ];
     /** @nocollapse */
