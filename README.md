@@ -4,7 +4,7 @@ Library for Visualizing Data in form of Graphs with Nodes in Angular using D3
 
 ## Package Installation Steps:
 
-- using npm:
+- using node package manager (npm):
 ```
 npm install ng-neo4jd3
 ```
@@ -13,6 +13,9 @@ npm install ng-neo4jd3
 ```
 yarn add ng-neo4jd3
 ```
+
+package link in [npm](https://www.npmjs.com/package/ng-neo4jd3) and [yarn](https://yarnpkg.com/package/ng-neo4jd3)
+
 
 ## Dependency Installation Steps:
 
