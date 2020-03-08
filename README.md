@@ -1,24 +1,61 @@
 # NgNeo4jd3
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.3.
+## Package Installation Steps:
 
-## Code scaffolding
+- using npm:
+```
+npm install ng-neo4jd3
+```
 
-Run `ng generate component component-name --project ng-neo4jd3` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-neo4jd3`.
-> Note: Don't forget to add `--project ng-neo4jd3` or else it will be added to the default project in your `angular.json` file. 
+- using yarn:
+```
+yarn add ng-neo4jd3
+```
 
-## Build
+## Dependency Installation Steps:
 
-Run `ng build ng-neo4jd3` to build the project. The build artifacts will be stored in the `dist/` directory.
+### D3
+- npm: `npm install d3`
+- yarn: `yarn add d3`
 
-## Publishing
+### Font Awesome
+- npm: `npm install font-awesome`
+- yarn: `yarn add font-awesome`
 
-After building your library with `ng build ng-neo4jd3`, go to the dist folder `cd dist/ng-neo4jd3` and run `npm publish`.
 
-## Running unit tests
+## Add Style Files:
 
-Run `ng test ng-neo4jd3` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Supported style types are 'css' and 'scss'.
 
-## Further help
+- CSS:
+```
+            "styles": [
+              ...
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/ng-neo4jd3/lib/assets/css/ng-neo4jd3.component.css",
+              ...
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- SCSS:
+```
+            "styles": [
+              ...
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/ng-neo4jd3/lib/assets/scss/ng-neo4jd3.component.scss",
+              ...
+```
+
+
+## Adding 'twemoji' for node_images:
+
+***twemoji*** folder contains several predefined image in the ***svg*** format. These images can be displayed on the 'nodes' of the graph to provide a better UI.
+
+- Location for putting ***twemoji***
+    - Copy ***twemoji*** folder from the directory ***node_modules/ng-neo4jd3/lib/assets/img/*** and paste the folder within ***src/assets/img/*** directory
+
+
+## Forked from 'eisman/neo4jd3'
+
+[README](README_FORKED.md) of the fork 'eisman/neo4jd3'
+
+## MIT LICENSE
