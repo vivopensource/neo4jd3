@@ -27,7 +27,7 @@ yarn add ng-neo4jd3
 
 ## Add Style Files:
 
-Supported style types are 'css' and 'scss'.
+Supported style types are 'css' and 'scss'. The following code snippet needs to be added with 'angular.json' file.
 
 - CSS:
 ```
