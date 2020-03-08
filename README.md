@@ -51,7 +51,7 @@ Supported style types are 'css' and 'scss'.
 ***twemoji*** folder contains several predefined image in the ***svg*** format. These images can be displayed on the 'nodes' of the graph to provide a better UI.
 
 - Location for putting ***twemoji***
-    - Copy ***twemoji*** folder from the directory ***node_modules/ng-neo4jd3/lib/assets/img/twemoji*** or ***node_modules/ng-neo4jd3/lib/assets/img/twemoji_test*** and paste the folder within ***src/assets/img/twemoji*** directory
+    - Copy ***twemoji*** content from the directory ***node_modules/ng-neo4jd3/lib/assets/img/twemoji*** or ***node_modules/ng-neo4jd3/lib/assets/img/twemoji_test*** and paste the content within ***src/assets/img/twemoji*** directory
 
 
 ## Forked from 'eisman/neo4jd3'
