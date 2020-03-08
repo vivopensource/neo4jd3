@@ -1,6 +1,6 @@
 # Ng-Neo4jd3
 
-Library for Visualizing Data for Neo4j in Angular using D3
+Library for Visualizing Data in form of Graphs with Nodes in Angular using D3
 
 ## Package Installation Steps:
 
