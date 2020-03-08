@@ -46,7 +46,7 @@ Supported style types are 'css' and 'scss'.
 ```
 
 
-## Adding 'twemoji' for node_images:
+## Adding 'twemoji' for node images:
 
 ***twemoji*** folder contains several predefined image in the ***svg*** format. These images can be displayed on the 'nodes' of the graph to provide a better UI.
 

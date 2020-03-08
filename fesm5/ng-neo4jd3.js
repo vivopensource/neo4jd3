@@ -165,13 +165,12 @@ var NgNeo4jD3Icons = /** @class */ (function () {
             'zoomFit': 'arrows-alt',
             'zoomIn': 'search-plus',
             'zoomOut': 'search-minus',
-            'Object': 'laptop'
-            /* Commentted Icons */
-            // 'Address': 'home',
-            // 'BirthDate': 'birthday-cake',
-            // 'CreditCard': 'credit-card',
-            // 'Device': 'laptop',
-            // 'icons': 'font-awesome',
+            'Object': 'laptop',
+            'Address': 'home',
+            'BirthDate': 'birthday-cake',
+            'CreditCard': 'credit-card',
+            'Device': 'laptop',
+            'icons': 'font-awesome',
         };
     };
     /**
@@ -182,32 +181,32 @@ var NgNeo4jD3Icons = /** @class */ (function () {
      */
     function () {
         return {
-            'Address': 'src/assets/img/twemoji/1f3e0.svg',
-            'BirthDate': 'src/assets/img/twemoji/1f382.svg',
-            'Cookie': 'src/assets/img/twemoji/1f36a.svg',
-            'CreditCard': 'src/assets/img/twemoji/1f4b3.svg',
-            'Device': 'src/assets/img/twemoji/1f4bb.svg',
-            'Email': 'src/assets/img/twemoji/2709.svg',
-            'Git': 'src/assets/img/twemoji/1f5c3.svg',
-            'Github': 'src/assets/img/twemoji/1f5c4.svg',
-            'icons': 'src/assets/img/twemoji/1f38f.svg',
-            'Ip': 'src/assets/img/twemoji/1f4cd.svg',
-            'Issues': 'src/assets/img/twemoji/1f4a9.svg',
-            'Language': 'src/assets/img/twemoji/1f1f1-1f1f7.svg',
-            'Options': 'src/assets/img/twemoji/2699.svg',
-            'Password': 'src/assets/img/twemoji/1f511.svg',
-            'Project': 'src/assets/img/twemoji/2198.svg',
-            'Project|name|neo4jd3': 'src/assets/img/twemoji/2196.svg',
-            'User': 'src/assets/img/twemoji/1f600.svg',
-            'Actor': 'src/assets/img/twemoji/1f600.svg',
-            'Object': 'src/assets/img/twemoji/1f4bb.svg',
-            'Api': 'src/assets/img/twemoji/1f527.svg',
-            'Phone': 'src/assets/img/twemoji/1f4de.svg',
-            'SecurityChallengeAnswer': 'src/assets/img/twemoji/1f4ac.svg',
-            'zoomFit': 'src/assets/img/twemoji/2194.svg',
-            'zoomIn': 'src/assets/img/twemoji/1f50d.svg',
-            'zoomOut': 'src/assets/img/twemoji/1f50e.svg',
-            'Google': 'src/assets/img/twemoji/1f4bb.svg'
+            'Address': 'assets/img/twemoji/1f3e0.svg',
+            'BirthDate': 'assets/img/twemoji/1f382.svg',
+            'Cookie': 'assets/img/twemoji/1f36a.svg',
+            'CreditCard': 'assets/img/twemoji/1f4b3.svg',
+            'Device': 'assets/img/twemoji/1f4bb.svg',
+            'Email': 'assets/img/twemoji/2709.svg',
+            'Git': 'assets/img/twemoji/1f5c3.svg',
+            'Github': 'assets/img/twemoji/1f5c4.svg',
+            'icons': 'assets/img/twemoji/1f38f.svg',
+            'Ip': 'assets/img/twemoji/1f4cd.svg',
+            'Issues': 'assets/img/twemoji/1f4a9.svg',
+            'Language': 'assets/img/twemoji/1f1f1-1f1f7.svg',
+            'Options': 'assets/img/twemoji/2699.svg',
+            'Password': 'assets/img/twemoji/1f511.svg',
+            'Project': 'assets/img/twemoji/2198.svg',
+            'Project|name|neo4jd3': 'assets/img/twemoji/2196.svg',
+            'User': 'assets/img/twemoji/1f600.svg',
+            'Actor': 'assets/img/twemoji/1f600.svg',
+            'Object': 'assets/img/twemoji/1f4bb.svg',
+            'Api': 'assets/img/twemoji/1f527.svg',
+            'Phone': 'assets/img/twemoji/1f4de.svg',
+            'SecurityChallengeAnswer': 'assets/img/twemoji/1f4ac.svg',
+            'zoomFit': 'assets/img/twemoji/2194.svg',
+            'zoomIn': 'assets/img/twemoji/1f50d.svg',
+            'zoomOut': 'assets/img/twemoji/1f50e.svg',
+            'Google': 'assets/img/twemoji/1f4bb.svg'
         };
     };
     return NgNeo4jD3Icons;
