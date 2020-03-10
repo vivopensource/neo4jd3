@@ -19,6 +19,13 @@
     "d3": "^5.15.0",
     "font-awesome": "^4.7.0"
   },
+  "keywords": [
+    "typescript",
+    "angular",
+    "d3",
+    "graph visualization",
+    "neo4j"
+  ],
   "main": "bundles/ng-neo4jd3.umd.js",
   "module": "fesm5/ng-neo4jd3.js",
   "es2015": "fesm2015/ng-neo4jd3.js",
