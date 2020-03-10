@@ -55,12 +55,35 @@ Supported style types are 'css' and 'scss'. The following code snippet needs to 
 
 ***twemoji*** folder contains several predefined image in the ***svg*** format. These images can be displayed on the 'nodes' of the graph to provide a better UI.
 
-- Location for putting ***twemoji***
-    - Copy ***twemoji*** content from the directory ***node_modules/ng-neo4jd3/lib/assets/img/twemoji*** or ***node_modules/ng-neo4jd3/lib/assets/img/twemoji_test*** and paste the content within ***src/assets/img/twemoji*** directory
+- Location for putting `twemoji`
+    - Copy `twemoji` content from the directory __node_modules/ng-neo4jd3/lib/assets/img/twemoji__ or __node_modules/ng-neo4jd3/lib/assets/img/twemoji_test__ and paste the content within __src/assets/img/twemoji__ directory
+
+
+## License Check
+
+```
+--packages ng-neo4jd3@0.1.1
+└─ ng-neo4jd3@0.1.1
+   ├─ licenses: MIT
+   ├─ repository: https://github.com/vivopensource/ng-neo4jd3
+   ├─ email: viveksacademia@gmail.com
+   ├─ path: ...
+   └─ licenseFile: ...
+
+Done in 1.79s.
+```
+
+
+## Implemenation Reference Files
+
+- Model: [ng-neo4jd3.model.ts](https://github.com/vivopensource/ng-neo4jd3-app/blob/master/projects/ng-neo4jd3/src/lib/ng-neo4jd3.model.ts)
+- Records: [ng-neo4jd3.records.ts](https://github.com/vivopensource/ng-neo4jd3-app/blob/master/projects/ng-neo4jd3/src/lib/ng-neo4jd3.records.ts)
+- Icons: [ng-neo4jd3.icons.ts](https://github.com/vivopensource/ng-neo4jd3-app/blob/master/projects/ng-neo4jd3/src/lib/ng-neo4jd3.icons.ts)
 
 
 ## Forked from 'eisman/neo4jd3'
 
 [README](README_FORKED.md) of the fork 'eisman/neo4jd3'
+
 
 ## MIT LICENSE
