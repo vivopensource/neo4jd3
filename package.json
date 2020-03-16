@@ -1,6 +1,6 @@
 {
   "name": "ng-neo4jd3",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Neo4j Visualisation using D3.js",
   "author": " <viveksacademia@gmail.com>",
   "engines": {

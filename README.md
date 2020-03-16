@@ -69,7 +69,7 @@ Supported style types are 'css' and 'scss'. The following code snippet needs to 
 
 ## Implemenation References
 
- - Test Repository: [ng-neo4jd3-test](https://github.com/vivopensource/ng-neo4jd3-test)
+ - Test Documentation and Implmenation: [ng-neo4jd3-test](https://github.com/vivopensource/ng-neo4jd3-test#readme)
 
  - Reference Files:
    - Model: [ng-neo4jd3.model.ts](https://github.com/vivopensource/ng-neo4jd3-app/blob/master/projects/ng-neo4jd3/src/lib/ng-neo4jd3.model.ts)
