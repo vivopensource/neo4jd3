@@ -618,7 +618,8 @@ class NgNeo4jd3Service {
             onNodeMouseLeave: undefined,
             onRelationshipDoubleClick: undefined,
             onNodeDragEnd: undefined,
-            onNodeDragStart: undefined
+            onNodeDragStart: undefined,
+            graphContainerHeight: '300px'
         };
     }
     /**
@@ -1914,7 +1915,8 @@ class NgNeo4jd3Service {
             onNodeMouseEnter: undefined,
             onNodeMouseLeave: undefined,
             onNodeDragEnd: undefined,
-            onNodeDragStart: undefined
+            onNodeDragStart: undefined,
+            graphContainerHeight: '300px'
         };
     }
     /**
@@ -2295,6 +2297,7 @@ class NgNeo4jD3Options {
          */
         () => { console.log("onNodeDragStart >> Default Method!"); });
         this.neo4jDataUrl = undefined;
+        this.graphContainerHeight = '300px';
     }
 }
 if (false) {
@@ -2344,6 +2347,8 @@ if (false) {
     NgNeo4jD3Options.prototype.neo4jData;
     /** @type {?} */
     NgNeo4jD3Options.prototype.neo4jDataUrl;
+    /** @type {?} */
+    NgNeo4jD3Options.prototype.graphContainerHeight;
 }
 
 /**

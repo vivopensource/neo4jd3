@@ -40,4 +40,5 @@ export declare class NgNeo4jD3Options {
     onNodeDragStart: Function;
     neo4jData: NgNeo4jD3Data;
     neo4jDataUrl: string;
+    graphContainerHeight: string;
 }

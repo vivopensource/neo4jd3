@@ -628,7 +628,8 @@
                 onNodeMouseLeave: undefined,
                 onRelationshipDoubleClick: undefined,
                 onNodeDragEnd: undefined,
-                onNodeDragStart: undefined
+                onNodeDragStart: undefined,
+                graphContainerHeight: '300px'
             };
         }
         /**
@@ -2170,7 +2171,8 @@
                 onNodeMouseEnter: undefined,
                 onNodeMouseLeave: undefined,
                 onNodeDragEnd: undefined,
-                onNodeDragStart: undefined
+                onNodeDragStart: undefined,
+                graphContainerHeight: '300px'
             };
         };
         /**
@@ -2605,6 +2607,7 @@
              */
             function () { console.log("onNodeDragStart >> Default Method!"); });
             this.neo4jDataUrl = undefined;
+            this.graphContainerHeight = '300px';
         }
         return NgNeo4jD3Options;
     }());
@@ -2655,6 +2658,8 @@
         NgNeo4jD3Options.prototype.neo4jData;
         /** @type {?} */
         NgNeo4jD3Options.prototype.neo4jDataUrl;
+        /** @type {?} */
+        NgNeo4jD3Options.prototype.graphContainerHeight;
     }
 
     exports.Neo4jD3Records = Neo4jD3Records;
