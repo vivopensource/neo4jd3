@@ -777,7 +777,7 @@ var NgNeo4jd3Service = /** @class */ (function () {
         /** @type {?} */
         var svg = container.append('svg')
             .attr('width', '100%')
-            .attr('height', '100%')
+            .attr('height', thisObj.options.graphContainerHeight)
             .attr('class', 'neo4jd3-graph')
             .call(zoom().on('zoom', (/**
          * @return {?}
@@ -2169,7 +2169,7 @@ var NgNeo4jd3Service = /** @class */ (function () {
             onNodeMouseLeave: undefined,
             onNodeDragEnd: undefined,
             onNodeDragStart: undefined,
-            graphContainerHeight: '300px'
+            graphContainerHeight: '100%'
         };
     };
     /**
@@ -2359,7 +2359,7 @@ var NgNeo4jd3Service = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        return "1.0.0";
+        return "0.1.6";
     };
     NgNeo4jd3Service.decorators = [
         { type: Injectable, args: [{
@@ -2604,7 +2604,7 @@ var NgNeo4jD3Options = /** @class */ (function () {
          */
         function () { console.log("onNodeDragStart >> Default Method!"); });
         this.neo4jDataUrl = undefined;
-        this.graphContainerHeight = '300px';
+        this.graphContainerHeight = '100%';
     }
     return NgNeo4jD3Options;
 }());
