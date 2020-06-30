@@ -21,8 +21,6 @@ export declare class NgNeo4jd3Service {
     private justLoaded;
     private numClasses;
     private svgScale;
-    private label;
-    private drawnRelationship;
     private optionsInput;
     private options;
     constructor();
