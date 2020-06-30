@@ -444,349 +444,370 @@
     var Neo4jD3Records = {
         "results": [
             {
-                "columns": [
-                    "Actor",
-                    "Object"
-                ],
+                "columns": ["user", "entity"],
                 "data": [
                     {
                         "graph": {
                             "nodes": [
                                 {
-                                    "id": 1142,
-                                    "labels": [
-                                        "User"
-                                    ],
+                                    "id": "1",
+                                    "labels": ["User"],
                                     "properties": {
-                                        "id": 1142,
-                                        "userName": "newuser9",
-                                        "mbox": "mailto:newuser9@mail.de",
-                                        "objectType": "Agent"
+                                        "userId": "eisman"
                                     }
-                                },
-                                {
-                                    "id": 1158,
-                                    "labels": [
-                                        "Device"
-                                    ],
+                                }, {
+                                    "id": "2",
+                                    "labels": ["Phone"],
                                     "properties": {
-                                        "id": 1158,
-                                        "objectName": "Lisa-Ark",
-                                        "objectDescription": "http://curatr3.com/define/type/level",
-                                        "objectId": "http://www.iosb.fraunhofer.de/schema/xapi/lostearth/arkarea/Lisa-Ark",
-                                        "objectType": "Activity"
+                                        "value": "555-555-5555"
                                     }
-                                },
-                                {
-                                    "id": 1147,
-                                    "labels": [
-                                        "Device"
-                                    ],
+                                }, {
+                                    "id": "3",
+                                    "labels": ["Address"],
                                     "properties": {
-                                        "id": 1147,
-                                        "objectName": "Lisa-Hangar",
-                                        "objectDescription": "http://curatr3.com/define/type/level",
-                                        "objectId": "http://www.iosb.fraunhofer.de/schema/xapi/lostearth/arkarea/Lisa-Hangar",
-                                        "objectType": "Activity"
+                                        "zipCode": "90210",
+                                        "country": "US",
+                                        "city": "Beverly Hills",
+                                        "state": "CA"
                                     }
-                                },
-                                {
-                                    "id": 1144,
-                                    "labels": [
-                                        "Device"
-                                    ],
+                                }, {
+                                    "id": "4",
+                                    "labels": ["BirthDate"],
                                     "properties": {
-                                        "id": 1144,
-                                        "objectName": "Mission Campus",
-                                        "objectDescription": "http://curatr3.com/define/type/level",
-                                        "objectId": "http://www.iosb.fraunhofer.de/schema/xapi/lostearth/startmission",
-                                        "objectType": "Activity"
+                                        "value": 1326322800000
                                     }
-                                },
-                                {
-                                    "id": 1168,
-                                    "labels": [
-                                        "Device"
-                                    ],
+                                }, {
+                                    "id": "5",
+                                    "labels": ["Password"],
                                     "properties": {
-                                        "id": 1168,
-                                        "objectName": "Simulation",
-                                        "objectDescription": "http://adlnet.gov/expapi/activities/simulation",
-                                        "objectId": "http://www.iosb.fraunhofer.de/schema/xapi/lostearth/sensorstart",
-                                        "objectType": "Activity"
+                                        "value": "123456"
                                     }
-                                },
-                                {
-                                    "id": 1160,
-                                    "labels": [
-                                        "Device"
-                                    ],
+                                }, {
+                                    "id": "6",
+                                    "labels": ["Device"],
                                     "properties": {
-                                        "id": 1160,
-                                        "objectName": "This list shows the weather conditions in each turn. Don't schedule a sensor to a turn with weather conditions that will ruin its images.",
-                                        "objectDescription": "http://id.tincanapi.com/activitytype/suggestion",
-                                        "objectId": "http://www.iosb.fraunhofer.de/schema/xapi/lostearth/hintasked/thislistshowstheweatherconditionsineachturn.don'tscheduleasensortoaturnwithweatherconditionsthatwillruinitsimages.",
-                                        "objectType": "Activity"
+                                        "value": "eisman"
                                     }
-                                },
-                                {
-                                    "id": 1161,
-                                    "labels": [
-                                        "User"
-                                    ],
+                                }, {
+                                    "id": "7",
+                                    "labels": ["SecurityChallengeAnswer"],
                                     "properties": {
-                                        "id": 1161,
-                                        "userName": "Agent007",
-                                        "mbox": "mailto:newuser9@mail.de",
-                                        "objectType": "Agent"
+                                        "value": "hCxh4LItmWefWg71JiYUaxxFrCRaqQIDEoEbeqHa"
                                     }
-                                },
-                                {
-                                    "id": 1149,
-                                    "labels": [
-                                        "Device"
-                                    ],
+                                }, {
+                                    "id": "8",
+                                    "labels": ["Project"],
                                     "properties": {
-                                        "id": 1149,
-                                        "objectName": "Mi6 Simulation",
-                                        "objectDescription": "http://adlnet.gov/expapi/activities/simulation",
-                                        "objectId": "http://www.iosb.fraunhofer.de/schema/xapi/lostearth/sensorabandon",
-                                        "objectType": "Outcome"
+                                        "name": "neo4jd3",
+                                        "title": "neo4jd3.js",
+                                        "description": "Neo4j graph visualization using D3.js.",
+                                        "url": "https://eisman.github.io/neo4jd3"
                                     }
-                                },
-                                {
-                                    "id": 1159,
-                                    "labels": [
-                                        "Device"
-                                    ],
+                                }, {
+                                    "id": "9",
+                                    "labels": ["Git"],
                                     "properties": {
-                                        "id": 1159,
-                                        "objectName": "Mi6 Simulation",
-                                        "objectDescription": "http://id.tincanapi.com/activitytype/suggestion",
-                                        "objectId": "http://www.iosb.fraunhofer.de/schema/xapi/lostearth/hintasked/hereyoucanseetheweatherconditionsofthecurrentturn.don'tscheduleasensortoaturnwithweatherconditionsthatwillruinitsimages.",
-                                        "objectType": "Activity"
+                                        "url": "https://github.com/eisman/neo4jd3"
                                     }
-                                },
-                                {
-                                    "id": 1148,
-                                    "labels": [
-                                        "Device"
-                                    ],
+                                }, {
+                                    "id": "10",
+                                    "labels": ["Issues"],
                                     "properties": {
-                                        "id": 1148,
-                                        "objectName": "Mi6 Simulation",
-                                        "objectDescription": "http://id.tincanapi.com/activitytype/suggestion",
-                                        "objectId": "http://www.iosb.fraunhofer.de/schema/xapi/lostearth/hintasked/thisfieldtellsyouhowlongthedeployedsensorwilltaketoproduceimages.thetimeiscalculatedwiththefieldsaboveit.youcandelaythestartofthesensorwith/startdelayrounds/tohavethesensorproducegoodimages.",
-                                        "objectType": "Activity"
+                                        "url": "https://github.com/eisman/neo4jd3/issues"
                                     }
-                                },
-                                {
-                                    "id": 1166,
-                                    "labels": [
-                                        "Device"
-                                    ],
+                                }, {
+                                    "id": "11",
+                                    "labels": ["Github"],
                                     "properties": {
-                                        "id": 1166,
-                                        "objectName": "Lisa-Bridge",
-                                        "objectDescription": "http://curatr3.com/define/type/level",
-                                        "objectId": "http://www.iosb.fraunhofer.de/schema/xapi/lostearth/arkarea/Lisa-Bridge",
-                                        "objectType": "Activity"
+                                        "url": "https://github.com"
                                     }
-                                },
-                                {
-                                    "id": 1169,
-                                    "labels": [
-                                        "Device"
-                                    ],
+                                }, {
+                                    "id": "12",
+                                    "labels": ["Project"],
                                     "properties": {
-                                        "id": 1169,
-                                        "objectName": "Mission Campus",
-                                        "objectDescription": "http://curatr3.com/define/type/level",
-                                        "objectId": "http://www.iosb.fraunhofer.de/schema/xapi/lostearth/missionfailure",
-                                        "objectType": "Activity"
+                                        "name": "neo4j",
+                                        "title": "Neo4j",
+                                        "description": "Graphs for Everyone",
+                                        "url": "http://neo4j.com"
+                                    }
+                                }, {
+                                    "id": "13",
+                                    "labels": ["Project"],
+                                    "properties": {
+                                        "name": "d3",
+                                        "title": "D3.js",
+                                        "description": "Bring data to life with SVG, Canvas and HTML.",
+                                        "url": "https://d3js.org/"
+                                    }
+                                }, {
+                                    "id": "14",
+                                    "labels": ["Email"],
+                                    "properties": {
+                                        "email": "eeisman@gmail.com"
+                                    }
+                                }, {
+                                    "id": "15",
+                                    "labels": ["CreditCard"],
+                                    "properties": {
+                                        "number": "4916928406205705",
+                                        "type": "visa"
+                                    }
+                                }, {
+                                    "id": "16",
+                                    "labels": ["Options"],
+                                    "properties": {}
+                                }, {
+                                    "id": "17",
+                                    "labels": ["Language"],
+                                    "properties": {
+                                        "lang": "en_us"
+                                    }
+                                }, {
+                                    "id": "18",
+                                    "labels": ["Cookie"],
+                                    "properties": {
+                                        "value": "itgnxe0xmvb1tazaqmkpmfzg8m3ma62qskfwcexc"
+                                    }
+                                }, {
+                                    "id": "19",
+                                    "labels": ["Ip"],
+                                    "properties": {
+                                        "address": "127.0.0.1"
+                                    }
+                                }, {
+                                    "id": "20",
+                                    "labels": ["icons"],
+                                    "properties": {
+                                        "description": "Map node labels to Font Awesome icons",
+                                        "type": "object",
+                                        "example": {
+                                            "Address": "home",
+                                            "BirthDate": "birthday-cake",
+                                            "Password": "asterisk",
+                                            "Phone": "phone",
+                                            "User": "user"
+                                        },
+                                        "deafult": "{}"
+                                    }
+                                }, {
+                                    "id": "21",
+                                    "labels": ["zoomIn"],
+                                    "properties": {
+                                        "description": "Scroll up to zoom in.",
+                                        "type": "function"
+                                    }
+                                }, {
+                                    "id": "22",
+                                    "labels": ["zoomOut"],
+                                    "properties": {
+                                        "description": "Scroll down to zoom out.",
+                                        "type": "function"
+                                    }
+                                }, {
+                                    "id": "23",
+                                    "labels": ["zoomFit"],
+                                    "properties": {
+                                        "description": "Adjust the graph to the container once it has been loaded.",
+                                        "type": "boolean",
+                                        "values": [true, false],
+                                        "default": false
+                                    }
+                                }, {
+                                    "id": "24",
+                                    "labels": ["Api"],
+                                    "properties": {}
+                                }, {
+                                    "id": "25",
+                                    "labels": ["Google"],
+                                    "iconFlag": true,
+                                    "properties": {
+                                        "url": "https://www.google.com/#q=\"neo4jd3\""
                                     }
                                 }
                             ],
                             "relationships": [
                                 {
-                                    "id": 6256,
-                                    "type": "completed",
-                                    "startNode": 1142,
-                                    "endNode": 1158,
+                                    "id": "1",
+                                    "type": "HAS_PHONE_NUMBER",
+                                    "startNode": "1",
+                                    "endNode": "2",
                                     "properties": {
-                                        "xapiId": "babb0b9d-bf4e-42e0-aeba-b48ea704b28a"
+                                        "from": 1473581532586
                                     }
-                                },
-                                {
-                                    "id": 6254,
-                                    "type": "selected",
-                                    "startNode": 1142,
-                                    "endNode": 1158,
+                                }, {
+                                    "id": "2",
+                                    "type": "HAS_ADDRESS",
+                                    "startNode": "1",
+                                    "endNode": "3",
                                     "properties": {
-                                        "xapiId": "babb0b9d-bf4e-42e0-aeba-b48ea704b28a"
+                                        "from": 1473581532586
                                     }
-                                },
-                                {
-                                    "id": 5994,
-                                    "type": "read",
-                                    "startNode": 1142,
-                                    "endNode": 1147,
+                                }, {
+                                    "id": "3",
+                                    "type": "HAS_BIRTH_DATE",
+                                    "startNode": "1",
+                                    "endNode": "4",
                                     "properties": {
-                                        "xapiId": "87800929-ca14-442e-bd65-2004777f979a"
+                                        "from": 1473581532586
                                     }
-                                },
-                                {
-                                    "id": 5988,
-                                    "type": "read",
-                                    "startNode": 1142,
-                                    "endNode": 1147,
+                                }, {
+                                    "id": "4",
+                                    "type": "HAS_PASSWORD",
+                                    "startNode": "1",
+                                    "endNode": "5",
                                     "properties": {
-                                        "xapiId": "87800929-ca14-442e-bd65-2004777f979a"
+                                        "from": 1473581532586
                                     }
-                                },
-                                {
-                                    "id": 5984,
-                                    "type": "selected",
-                                    "startNode": 1142,
-                                    "endNode": 1147,
+                                }, {
+                                    "id": "5",
+                                    "type": "USED_DEVICE",
+                                    "startNode": "1",
+                                    "endNode": "6",
                                     "properties": {
-                                        "xapiId": "87800929-ca14-442e-bd65-2004777f979a"
+                                        "from": 1473581532586
                                     }
-                                },
-                                {
-                                    "id": 5983,
-                                    "type": "started",
-                                    "startNode": 1142,
-                                    "endNode": 1144,
+                                }, {
+                                    "id": "6",
+                                    "type": "HAS_SECURITY_ANSWER",
+                                    "startNode": "1",
+                                    "endNode": "7",
                                     "properties": {
-                                        "xapiId": "ce7e28fb-f95c-445e-b366-25af5d4a8bc5"
+                                        "from": 1473581532586
                                     }
-                                },
-                                {
-                                    "id": 5960,
-                                    "type": "completed",
-                                    "startNode": 1142,
-                                    "endNode": 1168,
+                                }, {
+                                    "id": "7",
+                                    "type": "DEVELOPES",
+                                    "startNode": "1",
+                                    "endNode": "8",
                                     "properties": {
-                                        "xapiId": "55fc2f88-45a3-40c6-9bdd-19d8dd35cce8"
+                                        "from": 1470002400000
                                     }
-                                },
-                                {
-                                    "id": 5959,
-                                    "type": "selected",
-                                    "startNode": 1142,
-                                    "endNode": 1158,
+                                }, {
+                                    "id": "8",
+                                    "type": "REPOSITORY",
+                                    "startNode": "8",
+                                    "endNode": "9",
+                                    "properties": {}
+                                }, {
+                                    "id": "9",
+                                    "type": "ISSUES",
+                                    "startNode": "8",
+                                    "endNode": "10",
+                                    "properties": {}
+                                }, {
+                                    "id": "10",
+                                    "type": "HOSTED_ON",
+                                    "startNode": "8",
+                                    "endNode": "11",
+                                    "properties": {}
+                                }, {
+                                    "id": "11",
+                                    "type": "HOSTED_ON",
+                                    "startNode": "12",
+                                    "endNode": "11",
+                                    "properties": {}
+                                }, {
+                                    "id": "12",
+                                    "type": "HOSTED_ON",
+                                    "startNode": "13",
+                                    "endNode": "11",
+                                    "properties": {}
+                                }, {
+                                    "id": "13",
+                                    "type": "HAS_EMAIL",
+                                    "startNode": "1",
+                                    "endNode": "14",
                                     "properties": {
-                                        "xapiId": "babb0b9d-bf4e-42e0-aeba-b48ea704b28a"
+                                        "test1": "prop1-1",
+                                        "test2": "prop2",
                                     }
-                                },
-                                {
-                                    "id": 6132,
-                                    "type": "read",
-                                    "startNode": 1142,
-                                    "endNode": 1160,
+                                }, {
+                                    "id": "130",
+                                    "type": "ADDITIONAL_EMAIL",
+                                    "startNode": "1",
+                                    "endNode": "14",
                                     "properties": {
-                                        "xapiId": "0fa6d86a-75f0-4c6f-a439-78cf2208d07a"
+                                        "test1": "prop1-2",
+                                        "test3": "prop3",
                                     }
-                                },
-                                {
-                                    "id": 6308,
-                                    "type": "asked",
-                                    "startNode": 1142,
-                                    "endNode": 1160,
-                                    "properties": {
-                                        "xapiId": "ea168d07-7251-46bf-aa64-d57e9ab92d04"
-                                    }
-                                },
-                                {
-                                    "id": 5639,
-                                    "type": "started",
-                                    "startNode": 1142,
-                                    "endNode": 1168,
-                                    "properties": {
-                                        "xapiId": "55fc2f88-45a3-40c6-9bdd-19d8dd35cce8"
-                                    }
-                                },
-                                {
-                                    "id": 5630,
-                                    "type": "abandoned",
-                                    "startNode": 1161,
-                                    "endNode": 1149,
-                                    "properties": {
-                                        "xapiId": "55fc2f88-45a3-40c6-9bdd-19d8dd35cce8"
-                                    }
-                                },
-                                {
-                                    "id": 5644,
-                                    "type": "asked",
-                                    "startNode": 1161,
-                                    "endNode": 1159,
-                                    "properties": {
-                                        "xapiId": "898e54be-3b8d-4189-b51d-a512407d8d54"
-                                    }
-                                },
-                                {
-                                    "id": 5607,
-                                    "type": "asked",
-                                    "startNode": 1161,
-                                    "endNode": 1148,
-                                    "properties": {
-                                        "xapiId": "2290654f-2b5e-47a7-b3b0-2e7588ad68d1"
-                                    }
-                                },
-                                {
-                                    "id": 5567,
-                                    "type": "started",
-                                    "startNode": 1161,
-                                    "endNode": 1168,
-                                    "properties": {
-                                        "xapiId": "55fc2f88-45a3-40c6-9bdd-19d8dd35cce8"
-                                    }
-                                },
-                                {
-                                    "id": 6248,
-                                    "type": "completed",
-                                    "startNode": 1142,
-                                    "endNode": 1168,
-                                    "properties": {
-                                        "xapiId": "55fc2f88-45a3-40c6-9bdd-19d8dd35cce8"
-                                    }
-                                },
-                                {
-                                    "id": 5642,
-                                    "type": "selected",
-                                    "startNode": 1142,
-                                    "endNode": 1158,
-                                    "properties": {
-                                        "xapiId": "947b8d30-93b6-4588-bd4c-fd2b6e06a0f3"
-                                    }
-                                },
-                                {
-                                    "id": 5996,
-                                    "type": "selected",
-                                    "startNode": 1142,
-                                    "endNode": 1166,
-                                    "properties": {
-                                        "xapiId": "b88896a7-5a6e-4be8-98cb-f0746e84794f"
-                                    }
-                                },
-                                {
-                                    "id": 5995,
-                                    "type": "started",
-                                    "startNode": 1142,
-                                    "endNode": 1168,
-                                    "properties": {
-                                        "xapiId": "55fc2f88-45a3-40c6-9bdd-19d8dd35cce8"
-                                    }
-                                },
-                                {
-                                    "id": 6309,
-                                    "type": "failed",
-                                    "startNode": 1142,
-                                    "endNode": 1169,
-                                    "properties": {
-                                        "xapiId": "3b4a184b-6d51-4b03-ada6-6aeac1d3e26c"
-                                    }
+                                }, {
+                                    "id": "14",
+                                    "type": "USED_CREDIT_CARD",
+                                    "startNode": "1",
+                                    "endNode": "15",
+                                    "properties": {}
+                                }, {
+                                    "id": "15",
+                                    "type": "DEPENDS_ON",
+                                    "startNode": "8",
+                                    "endNode": "12",
+                                    "properties": {}
+                                }, {
+                                    "id": "16",
+                                    "type": "DEPENDS_ON",
+                                    "startNode": "8",
+                                    "endNode": "13",
+                                    "properties": {}
+                                }, {
+                                    "id": "17",
+                                    "type": "OPTIONS",
+                                    "startNode": "8",
+                                    "endNode": "16",
+                                    "properties": {}
+                                }, {
+                                    "id": "18",
+                                    "type": "HAS_LANGUAGE",
+                                    "startNode": "6",
+                                    "endNode": "17",
+                                    "properties": {}
+                                }, {
+                                    "id": "19",
+                                    "type": "HAS_COOKIE",
+                                    "startNode": "6",
+                                    "endNode": "18",
+                                    "properties": {}
+                                }, {
+                                    "id": "20",
+                                    "type": "HAS_IP",
+                                    "startNode": "6",
+                                    "endNode": "19",
+                                    "properties": {}
+                                }, {
+                                    "id": "21",
+                                    "type": "ICONS",
+                                    "startNode": "16",
+                                    "endNode": "20",
+                                    "properties": {}
+                                }, {
+                                    "id": "22",
+                                    "type": "ZOOM_IN",
+                                    "startNode": "24",
+                                    "endNode": "21",
+                                    "properties": {}
+                                }, {
+                                    "id": "23",
+                                    "type": "ZOOM_OUT",
+                                    "startNode": "24",
+                                    "endNode": "22",
+                                    "properties": {}
+                                }, {
+                                    "id": "24",
+                                    "type": "ZOOM_FIT",
+                                    "startNode": "16",
+                                    "endNode": "23",
+                                    "properties": {}
+                                }, {
+                                    "id": "25",
+                                    "type": "API",
+                                    "startNode": "8",
+                                    "endNode": "24",
+                                    "properties": {}
+                                }, {
+                                    "id": "26",
+                                    "type": "GOOGLE_SEARCH",
+                                    "startNode": "8",
+                                    "endNode": "25",
+                                    "properties": {}
                                 }
                             ]
                         }
