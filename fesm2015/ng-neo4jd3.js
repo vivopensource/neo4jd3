@@ -493,7 +493,19 @@ const Neo4jD3Records = {
                                 "type": "HAS_EMAIL",
                                 "startNode": "1",
                                 "endNode": "14",
-                                "properties": {}
+                                "properties": {
+                                    "test1": "prop1-1",
+                                    "test2": "prop2",
+                                }
+                            }, {
+                                "id": "130",
+                                "type": "ADDITIONAL_EMAIL",
+                                "startNode": "1",
+                                "endNode": "14",
+                                "properties": {
+                                    "test1": "prop1-2",
+                                    "test3": "prop3",
+                                }
                             }, {
                                 "id": "14",
                                 "type": "USED_CREDIT_CARD",
@@ -594,6 +606,7 @@ class NgNeo4jd3Service {
         this.justLoaded = false;
         this.numClasses = 0;
         this.svgScale = undefined;
+        this.drawnRelationship = {};
         this.options = {
             arrowSize: 4,
             colors: this.colors(),
@@ -619,7 +632,7 @@ class NgNeo4jd3Service {
             onRelationshipDoubleClick: undefined,
             onNodeDragEnd: undefined,
             onNodeDragStart: undefined,
-            graphContainerHeight: '300px'
+            graphContainerHeight: '100%'
         };
     }
     /**
@@ -658,6 +671,9 @@ class NgNeo4jd3Service {
         this.container = select(this.containerIdentity);
         this.initIconMap(this.options);
         this.mergeProperty(this.options, this.optionsInput);
+        if (this.options.neo4jData) {
+            this.mergeRelationshipWithSameNodes();
+        }
         if (this.options.icons) {
             this.options.showIcons = true;
         }
@@ -2065,6 +2081,176 @@ class NgNeo4jd3Service {
     version() {
         return "0.1.6";
     }
+    // Merges All Relationships with the same nodes
+    /**
+     * @private
+     * @return {?}
+     */
+    mergeRelationshipWithSameNodes() {
+        /** @type {?} */
+        let r = this.options.neo4jData.results[0].data[0].graph.relationships;
+        // Check the relationship counts between 2 nodes
+        /** @type {?} */
+        let spliceThem = [];
+        for (let rIndex = 0; rIndex < r.length; rIndex++) {
+            /** @type {?} */
+            let rel = r[rIndex];
+            /** @type {?} */
+            const startNode = rel['startNode'];
+            /** @type {?} */
+            const endNode = rel['endNode'];
+            /** @type {?} */
+            const relationshipKey = startNode + '-' + endNode;
+            /** @type {?} */
+            let relationshipValue = this.drawnRelationship[relationshipKey];
+            if (relationshipValue != undefined) {
+                /** @type {?} */
+                let relationshipModified = {};
+                /** @type {?} */
+                const obj = relationshipValue.obj;
+                // 
+                /** @type {?} */
+                const keys = this.mergeKeys(obj, rel);
+                keys.forEach((/**
+                 * @param {?} key
+                 * @return {?}
+                 */
+                key => {
+                    /** @type {?} */
+                    const newVal = this.assignAttributes(key, obj, rel);
+                    if (newVal != undefined) {
+                        relationshipModified[key] = this.assignAttributes(key, obj, rel);
+                    }
+                }));
+                relationshipValue.obj = relationshipModified;
+                r[relationshipValue.pos] = relationshipModified;
+                spliceThem.push(rIndex);
+            }
+            else {
+                this.drawnRelationship[relationshipKey] = {
+                    pos: rIndex,
+                    obj: rel
+                };
+            }
+        }
+        spliceThem.forEach((/**
+         * @param {?} index
+         * @return {?}
+         */
+        index => {
+            r.splice(index, 1);
+        }));
+    }
+    /**
+     * @private
+     * @param {?} obj1
+     * @param {?} obj2
+     * @return {?}
+     */
+    mergeKeys(obj1, obj2) {
+        /** @type {?} */
+        let keys = Object.keys(obj1);
+        keys = keys.concat(Object.keys(obj2));
+        return [...new Set(keys)];
+    }
+    /**
+     * @private
+     * @param {?} key
+     * @param {?} relationship1
+     * @param {?} relationship2
+     * @return {?}
+     */
+    assignAttributes(key, relationship1, relationship2) {
+        if (key === 'properties') {
+            /** @type {?} */
+            const prop1 = relationship1.properties;
+            /** @type {?} */
+            const prop2 = relationship2.properties;
+            if (prop1 == undefined && prop2 == undefined) {
+                return {};
+            }
+            else if (prop1 == undefined) {
+                return prop2;
+            }
+            else if (prop2 == undefined) {
+                return prop1;
+            }
+            /** @type {?} */
+            const keys = this.mergeKeys(prop1, prop2);
+            /** @type {?} */
+            let prop = {};
+            keys.forEach((/**
+             * @param {?} key
+             * @return {?}
+             */
+            key => {
+                prop[key] = this.assignAttributesValue(key, prop1, prop2);
+            }));
+            return prop;
+        }
+        else if (key == 'target' || key == 'linknum' || key == 'startNode' || key == 'endNode') {
+            return relationship1[key];
+        }
+        return this.assignAttributesValue(key, relationship1, relationship2);
+    }
+    /**
+     * @private
+     * @param {?} key
+     * @param {?} relationship1
+     * @param {?} relationship2
+     * @return {?}
+     */
+    assignAttributesValue(key, relationship1, relationship2) {
+        /** @type {?} */
+        let val1 = relationship1[key];
+        /** @type {?} */
+        let val2 = relationship2[key];
+        if (val1 != undefined || val2 != undefined) {
+            if (val1 == undefined) {
+                return val2;
+            }
+            else if (val2 == undefined) {
+                return val1;
+            }
+            else {
+                if (val1 instanceof Array || val2 instanceof Array) {
+                    if (!(val1 instanceof Array)) {
+                        val2.push(val1);
+                        return val2;
+                    }
+                    else if (!(val2 instanceof Array)) {
+                        val1.push(val2);
+                        return val1;
+                    }
+                    return val1.concat(val2);
+                }
+                else if (val1 instanceof Object || val2 instanceof Object) {
+                    if (!(val1 instanceof Object)) {
+                        val2.custom_key_assigned = val1;
+                        return val2;
+                    }
+                    else if (!(val2 instanceof Object)) {
+                        val1.custom_key_assigned = val2;
+                        return val1;
+                    }
+                    /** @type {?} */
+                    const keys = this.mergeKeys(val1, val2);
+                    /** @type {?} */
+                    let obj = {};
+                    keys.forEach((/**
+                     * @param {?} key
+                     * @return {?}
+                     */
+                    key => {
+                        obj[key] = this.assignAttributesValue(key, val1, val2);
+                    }));
+                    return obj;
+                }
+                return val1 + ', ' + val2;
+            }
+        }
+        return undefined;
+    }
 }
 NgNeo4jd3Service.decorators = [
     { type: Injectable, args: [{
@@ -2179,6 +2365,11 @@ if (false) {
      * @private
      */
     NgNeo4jd3Service.prototype.label;
+    /**
+     * @type {?}
+     * @private
+     */
+    NgNeo4jd3Service.prototype.drawnRelationship;
     /**
      * @type {?}
      * @private

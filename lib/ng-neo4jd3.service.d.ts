@@ -22,6 +22,7 @@ export declare class NgNeo4jd3Service {
     private numClasses;
     private svgScale;
     private label;
+    private drawnRelationship;
     private optionsInput;
     private options;
     constructor();
@@ -121,4 +122,8 @@ export declare class NgNeo4jd3Service {
     appendRelationshipToGraph(relationship: any): RelationshipEnter;
     mergeProperty(target: any, source: any): void;
     version(): string;
+    private mergeRelationshipWithSameNodes;
+    private mergeKeys;
+    private assignAttributes;
+    private assignAttributesValue;
 }

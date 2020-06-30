@@ -1,3 +1,4 @@
+import { __spread } from 'tslib';
 import { Injectable, ɵɵdefineInjectable, Component, NgModule } from '@angular/core';
 import { select, forceSimulation, forceCollide, forceManyBody, forceLink, forceCenter, zoom, event, drag, rgb, json } from 'd3';
 
@@ -500,7 +501,19 @@ var Neo4jD3Records = {
                                 "type": "HAS_EMAIL",
                                 "startNode": "1",
                                 "endNode": "14",
-                                "properties": {}
+                                "properties": {
+                                    "test1": "prop1-1",
+                                    "test2": "prop2",
+                                }
+                            }, {
+                                "id": "130",
+                                "type": "ADDITIONAL_EMAIL",
+                                "startNode": "1",
+                                "endNode": "14",
+                                "properties": {
+                                    "test1": "prop1-2",
+                                    "test3": "prop3",
+                                }
                             }, {
                                 "id": "14",
                                 "type": "USED_CREDIT_CARD",
@@ -601,6 +614,7 @@ var NgNeo4jd3Service = /** @class */ (function () {
         this.justLoaded = false;
         this.numClasses = 0;
         this.svgScale = undefined;
+        this.drawnRelationship = {};
         this.options = {
             arrowSize: 4,
             colors: this.colors(),
@@ -626,7 +640,7 @@ var NgNeo4jd3Service = /** @class */ (function () {
             onRelationshipDoubleClick: undefined,
             onNodeDragEnd: undefined,
             onNodeDragStart: undefined,
-            graphContainerHeight: '300px'
+            graphContainerHeight: '100%'
         };
     }
     /**
@@ -682,6 +696,9 @@ var NgNeo4jd3Service = /** @class */ (function () {
         this.container = select(this.containerIdentity);
         this.initIconMap(this.options);
         this.mergeProperty(this.options, this.optionsInput);
+        if (this.options.neo4jData) {
+            this.mergeRelationshipWithSameNodes();
+        }
         if (this.options.icons) {
             this.options.showIcons = true;
         }
@@ -2361,6 +2378,210 @@ var NgNeo4jd3Service = /** @class */ (function () {
     function () {
         return "0.1.6";
     };
+    // Merges All Relationships with the same nodes
+    // Merges All Relationships with the same nodes
+    /**
+     * @private
+     * @return {?}
+     */
+    NgNeo4jd3Service.prototype.mergeRelationshipWithSameNodes = 
+    // Merges All Relationships with the same nodes
+    /**
+     * @private
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        /** @type {?} */
+        var r = this.options.neo4jData.results[0].data[0].graph.relationships;
+        // Check the relationship counts between 2 nodes
+        /** @type {?} */
+        var spliceThem = [];
+        var _loop_1 = function (rIndex) {
+            /** @type {?} */
+            var rel = r[rIndex];
+            /** @type {?} */
+            var startNode = rel['startNode'];
+            /** @type {?} */
+            var endNode = rel['endNode'];
+            /** @type {?} */
+            var relationshipKey = startNode + '-' + endNode;
+            /** @type {?} */
+            var relationshipValue = this_1.drawnRelationship[relationshipKey];
+            if (relationshipValue != undefined) {
+                /** @type {?} */
+                var relationshipModified_1 = {};
+                /** @type {?} */
+                var obj_1 = relationshipValue.obj;
+                // 
+                /** @type {?} */
+                var keys = this_1.mergeKeys(obj_1, rel);
+                keys.forEach((/**
+                 * @param {?} key
+                 * @return {?}
+                 */
+                function (key) {
+                    /** @type {?} */
+                    var newVal = _this.assignAttributes(key, obj_1, rel);
+                    if (newVal != undefined) {
+                        relationshipModified_1[key] = _this.assignAttributes(key, obj_1, rel);
+                    }
+                }));
+                relationshipValue.obj = relationshipModified_1;
+                r[relationshipValue.pos] = relationshipModified_1;
+                spliceThem.push(rIndex);
+            }
+            else {
+                this_1.drawnRelationship[relationshipKey] = {
+                    pos: rIndex,
+                    obj: rel
+                };
+            }
+        };
+        var this_1 = this;
+        for (var rIndex = 0; rIndex < r.length; rIndex++) {
+            _loop_1(rIndex);
+        }
+        spliceThem.forEach((/**
+         * @param {?} index
+         * @return {?}
+         */
+        function (index) {
+            r.splice(index, 1);
+        }));
+    };
+    /**
+     * @private
+     * @param {?} obj1
+     * @param {?} obj2
+     * @return {?}
+     */
+    NgNeo4jd3Service.prototype.mergeKeys = /**
+     * @private
+     * @param {?} obj1
+     * @param {?} obj2
+     * @return {?}
+     */
+    function (obj1, obj2) {
+        /** @type {?} */
+        var keys = Object.keys(obj1);
+        keys = keys.concat(Object.keys(obj2));
+        return __spread(new Set(keys));
+    };
+    /**
+     * @private
+     * @param {?} key
+     * @param {?} relationship1
+     * @param {?} relationship2
+     * @return {?}
+     */
+    NgNeo4jd3Service.prototype.assignAttributes = /**
+     * @private
+     * @param {?} key
+     * @param {?} relationship1
+     * @param {?} relationship2
+     * @return {?}
+     */
+    function (key, relationship1, relationship2) {
+        var _this = this;
+        if (key === 'properties') {
+            /** @type {?} */
+            var prop1_1 = relationship1.properties;
+            /** @type {?} */
+            var prop2_1 = relationship2.properties;
+            if (prop1_1 == undefined && prop2_1 == undefined) {
+                return {};
+            }
+            else if (prop1_1 == undefined) {
+                return prop2_1;
+            }
+            else if (prop2_1 == undefined) {
+                return prop1_1;
+            }
+            /** @type {?} */
+            var keys = this.mergeKeys(prop1_1, prop2_1);
+            /** @type {?} */
+            var prop_1 = {};
+            keys.forEach((/**
+             * @param {?} key
+             * @return {?}
+             */
+            function (key) {
+                prop_1[key] = _this.assignAttributesValue(key, prop1_1, prop2_1);
+            }));
+            return prop_1;
+        }
+        else if (key == 'target' || key == 'linknum' || key == 'startNode' || key == 'endNode') {
+            return relationship1[key];
+        }
+        return this.assignAttributesValue(key, relationship1, relationship2);
+    };
+    /**
+     * @private
+     * @param {?} key
+     * @param {?} relationship1
+     * @param {?} relationship2
+     * @return {?}
+     */
+    NgNeo4jd3Service.prototype.assignAttributesValue = /**
+     * @private
+     * @param {?} key
+     * @param {?} relationship1
+     * @param {?} relationship2
+     * @return {?}
+     */
+    function (key, relationship1, relationship2) {
+        var _this = this;
+        /** @type {?} */
+        var val1 = relationship1[key];
+        /** @type {?} */
+        var val2 = relationship2[key];
+        if (val1 != undefined || val2 != undefined) {
+            if (val1 == undefined) {
+                return val2;
+            }
+            else if (val2 == undefined) {
+                return val1;
+            }
+            else {
+                if (val1 instanceof Array || val2 instanceof Array) {
+                    if (!(val1 instanceof Array)) {
+                        val2.push(val1);
+                        return val2;
+                    }
+                    else if (!(val2 instanceof Array)) {
+                        val1.push(val2);
+                        return val1;
+                    }
+                    return val1.concat(val2);
+                }
+                else if (val1 instanceof Object || val2 instanceof Object) {
+                    if (!(val1 instanceof Object)) {
+                        val2.custom_key_assigned = val1;
+                        return val2;
+                    }
+                    else if (!(val2 instanceof Object)) {
+                        val1.custom_key_assigned = val2;
+                        return val1;
+                    }
+                    /** @type {?} */
+                    var keys = this.mergeKeys(val1, val2);
+                    /** @type {?} */
+                    var obj_2 = {};
+                    keys.forEach((/**
+                     * @param {?} key
+                     * @return {?}
+                     */
+                    function (key) {
+                        obj_2[key] = _this.assignAttributesValue(key, val1, val2);
+                    }));
+                    return obj_2;
+                }
+                return val1 + ', ' + val2;
+            }
+        }
+        return undefined;
+    };
     NgNeo4jd3Service.decorators = [
         { type: Injectable, args: [{
                     providedIn: 'root'
@@ -2476,6 +2697,11 @@ if (false) {
      * @private
      */
     NgNeo4jd3Service.prototype.label;
+    /**
+     * @type {?}
+     * @private
+     */
+    NgNeo4jd3Service.prototype.drawnRelationship;
     /**
      * @type {?}
      * @private
